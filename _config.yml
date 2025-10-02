@@ -7,8 +7,8 @@ theme: minima
 nav_links:
   - title: "Home"
     url: /
-  - title: "About Me"
-    url: /about-me/
+  - title: "About Us"
+    url: /about/
   - title: "About Site"
     url: /about-site/
 
