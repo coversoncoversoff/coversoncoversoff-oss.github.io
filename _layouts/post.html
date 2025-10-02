@@ -19,9 +19,21 @@ layout: default
     {{ content }}
   </div>
 
-  {%- if site.disqus.shortname -%}
-    {%- include disqus_comments.html -%}
-  {%- endif -%}
+  <script src="https://giscus.app/client.js"
+          data-repo="readingbetweenthewickets-oss/readingbetweenthewickets-oss.github.io"
+          data-repo-id="R_kgDOP6BIiA"
+          data-category="General"
+          data-category-id="DIC_kwDOP6BIiM4CwLVJ"
+          data-mapping="url"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="bottom"
+          data-theme="dark_high_contrast"
+          data-lang="en"
+          crossorigin="anonymous"
+          async>
+  </script>
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
