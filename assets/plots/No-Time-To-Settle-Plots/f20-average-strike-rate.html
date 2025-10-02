@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Average Strike Rate Over Years</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+    .chart-container {
+      width: 100%;
+      max-width: 900px;
+      height: 500px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    h2 {
+      text-align: center;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>First 20 Balls Average Strike Rate Over Years</h2>
+  <div class="chart-container">
+    <canvas id="strikeRateChart"></canvas>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('strikeRateChart').getContext('2d');
+
+    const data = {
+      labels: [2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015,
+               2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
+      datasets: [{
+        label: 'Average Strike Rate',
+        data: [41.548518, 42.673614, 43.738957, 46.470598, 43.777229,
+               44.818312, 43.139187, 42.509218, 46.782939, 43.899172,
+               43.545936, 43.164810, 41.605269, 42.877053, 40.317106,
+               38.957617, 45.252873, 48.898040, 49.097814, 48.200418],
+        borderColor: 'rgba(75, 192, 192, 1)',
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        fill: true,
+        tension: 0.3,
+        pointRadius: 4,
+        pointHoverRadius: 6
+      }]
+    };
+
+    new Chart(ctx, {
+      type: 'line',
+      data: data,
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: true },
+          title: {
+            display: true,
+            text: 'First 20 Balls Average Strike Rate Over Years'
+          }
+        },
+        scales: {
+          x: { title: { display: true, text: 'Year' } },
+          y: { title: { display: true, text: 'First 20 Balls Average Strike Rate' }, beginAtZero: false }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
