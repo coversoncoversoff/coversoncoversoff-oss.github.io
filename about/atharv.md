@@ -3,7 +3,7 @@ layout: page
 title: Atharv Tambade
 permalink: /about/atharv/
 ---
-![Atharv](/assets/images/atharv.jpg)
+![Atharv](/assets/images/Atharv.jpg)
 
 Hi, I’m Atharv 👋  
 I work on cricket analytics, biophysics, and data-driven research.  
