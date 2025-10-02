@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Top F20B Strike Rates vs Spin</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background:#f9f9f9; }
+    .chart-container { width: 100%; max-width: 900px; height: 500px; margin: 40px auto; background:#fff; padding:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1); border-radius:10px; }
+    h2 { text-align:center; margin-top:40px; }
+  </style>
+</head>
+<body>
+  <h2>Top F20B Strike Rates vs Spin</h2>
+  <div class="chart-container">
+    <canvas id="strikeRateSpinChart"></canvas>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('strikeRateSpinChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ["V Sehwag","Sarfraz Ahmed","BM Duckett","RR Pant","CH Gayle","TM Dilshan","YBK Jaiswal","GP Swann","HC Brook","Z Crawley","N Dickwella","Q de Kock","TG Southee","KA Maharaj","DA Warner"],
+        datasets: [{ label:'Strike rate vs spin (first 20 balls)', data:[103.24,90.47,84.79,80.62,79.38,79.14,78.44,78.37,76.65,73.28,71.12,70.52,68.46,68.14,67.98], backgroundColor:'rgba(54,162,235,0.7)', borderColor:'rgba(54,162,235,1)', borderWidth:1 }]
+      },
+      options: { indexAxis:'y', responsive:true, plugins:{legend:{display:false}, title:{display:true,text:'Top F20B Strike Rates vs Spin'}}, scales:{x:{beginAtZero:true}} }
+    });
+  </script>
+</body>
+</html>
