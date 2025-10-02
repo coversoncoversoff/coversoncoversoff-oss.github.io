@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>First 20 Balls Strike Rate</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+    .chart-container {
+      width: 100%;
+      max-width: 900px;
+      height: 500px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    h2 {
+      text-align: center;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>First 20 Balls Strike Rate of Top Players</h2>
+  <div class="chart-container">
+    <canvas id="strikeRateChart"></canvas>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('strikeRateChart').getContext('2d');
+
+    const data = {
+      labels: [
+        "V Sehwag", "BM Duckett", "TG Southee", "TM Dilshan", "HC Brook",
+        "Sarfraz Ahmed", "RR Pant", "DA Warner", "CH Gayle", "YBK Jaiswal"
+      ],
+      datasets: [{
+        label: 'First 20 Balls Strike Rate',
+        data: [
+          88.49938499, 81.60418483, 80.61068702, 78.19025522, 77.72397094,
+          72.72151899, 71.51854444, 69.89088764, 69.34189406, 68.06282723
+        ],
+        backgroundColor: 'rgba(75, 192, 192, 0.6)',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1
+      }]
+    };
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: data,
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        plugins: {
+          legend: { display: true },
+          title: {
+            display: true,
+            text: 'First 20 Balls Strike Rate of Players with >1500 Runs'
+          }
+        },
+        scales: {
+          x: { 
+            title: { display: true, text: 'Strike Rate' }, 
+            beginAtZero: true 
+          },
+          y: { 
+            title: { display: true, text: 'Player' } 
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
