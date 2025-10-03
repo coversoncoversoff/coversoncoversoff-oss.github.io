@@ -63,13 +63,22 @@
       },
       options: {
         responsive: true,
-        maintainAspectRatio: true, // ✅ responsive with aspect ratio
+        maintainAspectRatio: true,
         plugins: {
           title: {
             display: true,
             text: 'Average Strike Rate Over Years'
           },
-          legend: { display: true }
+          legend: { display: true },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                let year = context.label;
+                let value = context.parsed.y;
+                return year + ': ' + value.toFixed(2);
+              }
+            }
+          }
         },
         scales: {
           x: { title: { display: true, text: 'Year' } },
