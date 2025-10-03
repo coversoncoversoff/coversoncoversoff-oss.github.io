@@ -10,7 +10,7 @@ Cricket has long drilled into us the etiquette of batting: start cautiously, “
 <iframe 
   src="{{ '/assets/plots/No-Time-To-Settle-Plots/f20-strike-rate-1500.html' | relative_url }}" 
   width="100%" 
-  height="650" 
+  height="600" 
   style="border:none; overflow:hidden;"
 ></iframe>
 
@@ -27,21 +27,21 @@ The F20B strike rate neatly separates the great batting era of the yore (ft. Seh
 <iframe 
   src="{{ '/assets/plots/No-Time-To-Settle-Plots/f20-average-strike-rate.html' | relative_url }}" 
   width="100%" 
-  height="650" 
+  height="600" 
   style="border:none; overflow:hidden;"
 ></iframe>
 
 <iframe 
   src="{{ '/assets/plots/No-Time-To-Settle-Plots/average-strike-rate.html' | relative_url }}" 
   width="100%" 
-  height="650" 
+  height="600" 
   style="border:none; overflow:hidden;"
 ></iframe>
 
 <iframe 
   src="{{ '/assets/plots/No-Time-To-Settle-Plots/average-balls-per-wicket.html' | relative_url }}" 
   width="100%" 
-  height="650" 
+  height="600" 
   style="border:none; overflow:hidden;"
 ></iframe>
 
@@ -57,7 +57,7 @@ The strike rates against the first 20 balls of pace and spin paint a picture too
 <iframe 
   src="{{ '/assets/plots/No-Time-To-Settle-Plots/f20b-fast.html' | relative_url }}" 
   width="100%" 
-  height="650" 
+  height="600" 
   style="border:none; overflow:hidden;"
 ></iframe>
 
@@ -66,7 +66,7 @@ Sehwag is the emperor of destroying spin in test cricket. He starts with a strik
 <iframe 
   src="{{ '/assets/plots/No-Time-To-Settle-Plots/f20b-spin.html' | relative_url }}" 
   width="100%" 
-  height="650" 
+  height="600" 
   style="border:none; overflow:hidden;"
 ></iframe>
 
@@ -76,7 +76,7 @@ We take the geometric mean of the F20B strike rates against pace and spin (multi
 <iframe 
   src="{{ '/assets/plots/No-Time-To-Settle-Plots/geo-mean.html' | relative_url }}" 
   width="100%" 
-  height="650" 
+  height="900" 
   style="border:none; overflow:hidden;"
 ></iframe>
 
@@ -85,14 +85,14 @@ Despite belonging to very different eras, Sehwag and Duckett end up looking oddl
 <iframe 
   src="{{ '/assets/plots/No-Time-To-Settle-Plots/mean-median.html' | relative_url }}" 
   width="100%" 
-  height="650" 
+  height="600" 
   style="border:none; overflow:hidden;"
 ></iframe>
 
 <iframe 
   src="{{ '/assets/plots/No-Time-To-Settle-Plots/fraction-20.html' | relative_url }}" 
   width="100%" 
-  height="650" 
+  height="700" 
   style="border:none; overflow:hidden;"
 ></iframe>
 
