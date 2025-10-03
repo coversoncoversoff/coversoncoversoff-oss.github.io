@@ -6,7 +6,20 @@ categories: cricket data
 ---
 Cricket has long drilled into us the etiquette of batting: start cautiously, “get your eye in,” and only then begin to accelerate. To do otherwise was seen as almost impolite. The numbers reflect this convention. Since ball-by-ball records began, the average top-six batter has scored at a strike rate of just 44 in their first 20 balls — less than three runs an over — before climbing to a steady 51 once set. In this world of well-mannered beginnings, two players have torn up the script. Virender Sehwag’s outrageous first 20 ball (F20B) strike rate of 88.5 is miles clear of the third-placed Tim Southee’s 80.6 (amongst batters with at least 1500 runs over their career). To highlight just how absurd this is: Sehwag averaged just under 50 in Tests while scoring nearly twice as fast as the average batter at the start of an innings. More recently, Ben Duckett’s 81.6 shines even brighter in an era when batting averages have fallen off a cliff. 
 
-<iframe src="{{ '/assets/plots/No-Time-To-Settle-Plots/f20-strike-rate-1500.html' | relative_url }}" width="800" height="500"></ifram
+<iframe 
+  id="f20-strike-rate-1500"
+  src="{{ '/assets/plots/No-Time-To-Settle-Plots/f20-strike-rate-1500.html' | relative_url }}" 
+  width="100%" 
+  style="border:none; overflow:hidden;"
+></iframe>
+
+<script>
+  const iframe = document.getElementById('f20-strike-rate-1500');
+  iframe.onload = function() {
+    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
+  };
+</script>
+
 
 While both Sehwag and Duckett started their innings as if they were trying to start a brawl, the streets they fought on could not have been more different. Sehwag’s exploits came in a batting era in a stacked batting line up consisting of Tendulkar, Dravid and Laxman. Sehwag was the volatile cryptocurrency in a portfolio that had the stability of riskless treasury bills that somehow appreciated at 12% a year. The average top 6 batter averaged 40.79 between his debut and final test — one of the highest averaging periods of all times. Yet, scoring quickly was still an alien concept. Australia had upped their strike rate to 59.69 in the 2000s to salvage results in games that would have otherwise been drawn due to the roads tests were played on. Fast scorers in this period were still quite rare to come by, and even then they were mostly players who had a second skill as an insurance for their place in their side — Afridi, Jayasuriya and Gilchrist (the one game Afridi has ball-by-ball data, he struck 33 off 19 balls at a strike rate of 173; Jayasuriya, who struck at over 81 in his first 20 balls since ball-by-ball data is available, is unlucky not to be a main character in this piece — he has less than 400 runs since we have ball-by-ball data while our cutoff was batters with 1500 runs). Gilchrist was not a particularly fast starter either — striking at only 65 for the first 20 balls, before going ballistic and finishing at an  overall strike rate of over 85. The major exception to this all-rounder norm was Matt Hayden, who played as a pure batter, and struck at above 60. But, even he paled in comparison to Sehwag’s starts — striking only at 63.3. Even though Sehwag played in an era that was as friendly as it can get for batters, and in a country that laid out batting friendly wickets (the average top 6 batter averaged 44.28 in India during Sehwag’s career), remember that T20s had still not caught on then, and the art of aggressive batting had not yet been perfected. Sehwag did not revolutionize batting — nobody could bat like him in his immediate aftermath. Every team wanted an opener like him, but just did not understand how to replicate his success consistently for almost a decade after his retirement.
 
@@ -16,11 +29,48 @@ Duckett, in contrast, does not have the insurance of having the ever-reliable gr
 The F20B strike rate neatly separates the great batting era of the yore (ft. Sehwag) from the pace playing pandemic (ft. Duckett, name courtesy: Jarrod Kimber) triggered by the wobble-ball wave that spread across world cricket around 2016–17. From 2006 (from when we could collect ball-by-ball data) through 2016, the F20B strike rate mostly hovered between 42 and 46, with only 2009 and 2014 pushing just past 46. Once the pandemic era began, however, batters grew increasingly cautious at the start of their innings, a trend that persisted until 2021. The same pattern appears in overall strike rates: between 2006 and 2015 they fluctuated between 43 and 48, only to fall steadily until bottoming out in 2021. That year was particularly brutal for batters—strike rates dipped below 42 overall, and under 39 in the first 20 balls. Slower scoring didn’t translate into longer stays at the crease either: while batters consistently averaged well above 124 balls per dismissal from 2007 to 2016. The figure slumped below 100 in 2019 and 2020, then recovered only modestly to 114 in 2021. Since then, the trade-off has flipped. Batters are once again starting briskly, with F20B strike rates topping 48 for three straight years and overall rates climbing past 50 in 2023 and 2024, before dipping only slightly to over 49 in 2025. But this renewed aggression has come at a cost — the average balls per wicket has plunged to 86.1, 99.1, and 71.3 in 2023, 2024, and 2025.
 
 
-<iframe src="{{ '/assets/plots/No-Time-To-Settle-Plots/f20-average-strike-rate.html' | relative_url }}" width="800" height="500"></iframe>
+<iframe 
+  id="f20-average-strike-rate"
+  src="{{ '/assets/plots/No-Time-To-Settle-Plots/f20-average-strike-rate.html' | relative_url }}" 
+  width="100%" 
+  style="border:none; overflow:hidden;"
+></iframe>
 
-<iframe src="{{ '/assets/plots/No-Time-To-Settle-Plots/average-strike-rate.html' | relative_url }}" width="800" height="500"></iframe>
+<script>
+  const iframe = document.getElementById('f20-average-strike-rate');
+  iframe.onload = function() {
+    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
+  };
+</script>
 
-<iframe src="{{ '/assets/plots/No-Time-To-Settle-Plots/average-balls-per-wicket.html' | relative_url }}" width="800" height="500"></iframe>
+<iframe 
+  id="average-strike-rate"
+  src="{{ '/assets/plots/No-Time-To-Settle-Plots/average-strike-rate.html' | relative_url }}" 
+  width="100%" 
+  style="border:none; overflow:hidden;"
+></iframe>
+
+<script>
+  const iframe = document.getElementById('average-strike-rate');
+  iframe.onload = function() {
+    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
+  };
+</script>
+
+
+<iframe 
+  id="average-balls-per-wicket"
+  src="{{ '/assets/plots/No-Time-To-Settle-Plots/average-balls-per-wicket.html' | relative_url }}" 
+  width="100%" 
+  style="border:none; overflow:hidden;"
+></iframe>
+
+<script>
+  const iframe = document.getElementById('average-balls-per-wicket');
+  iframe.onload = function() {
+    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
+  };
+</script>
 
 Batters who blaze away in their first 20 balls usually fall into three buckets. The first are the fast-scoring openers — the Sehwags, Ducketts, Gayles and Warners — who treat the new ball like a nuisance to be bludgeoned into submission. Then come the all-rounders and wicketkeepers, the likes of Colin de Grandhomme (whose F20B strike rate actually tops Duckett’s but misses our 1500-run cutoff), Sam Curran (fifth-highest against pace) and Sarfaraz Ahmed (second overall against spin, only behind Sehwag). These players often slot in at six or seven, walking out around the 70-over mark with license to attack the soft ball before the second new one arrives, or to cash in while batting with the tail. And finally, there are the tail-end sloggers — Southee and Swann among them — who don’t back their defence to last long and prefer to swing hard while they can. Only 2 out of the top 15, and 4 of the top 20 (counting Pope as a specialist batter, discounting his part-time keeping and part-time captaincy) are specialist middle order batters. Brook is the only middle-order batter that makes the top 10. Pietersen and de Villiers, the two batters who were known to go ballistic while batting in the middle order, started at a strike rate of less than 50 in their first 20 balls, before accelerating to 59 and 54 respectively.
 
@@ -29,22 +79,81 @@ Batters who blaze away in their first 20 balls usually fall into three buckets. 
 
 The strike rates against the first 20 balls of pace and spin paint a picture too. The New Zealand duo of Southee and Colin de Grandhomme love to decimate pace at the start of their innings, with F20B strike rates of 91.4 and 89.6 respectively. Their approaches towards spin are polar opposites to each other. Southee starts (relatively) steadily against spin at a strike rate of 68.4, and then starts smacking them at a strike rate of over 85 after facing 20 balls of spin. CdG on the other hand scores at 80 in the first 20 balls of spin he faces, before slowing down to 67.8. While the latter probably likes to not allow spinners to settle by attacking them upfront and then milking them consistently later on, Southee lives true to his reputation of swinging his bat further and further as the innings progresses. Interestingly, yet another similar player makes the top 5 in terms of F20B strike rate against pace — Sam Curran. He starts at over 78 against pace, but is much more sedate against spin than the other two mentioned — starting below 46.4 against the tweakers, before accelerating to 59. The marauders from the two eras — Sehwag and Duckett are placed third and fourth, starting at 87.6 and 84.1 respectively, while averaging much higher than two of the other three lower order bats in the top 5 against pace, 49.7 and 46.5 respectively. In comparison, Southee and Curran average 18.0, and 23.2. CdG has numbers comparable to Sehwag and Duckett against pace, averaging 44.7 against the faster bowlers — he would truly be comparable to these two if only he had played more tests. 
 
-<iframe src="{{ '/assets/plots/No-Time-To-Settle-Plots/f20b-fast.html' | relative_url }}" width="800" height="500"></iframe>
+<iframe 
+  id="f20b-fast"
+  src="{{ '/assets/plots/No-Time-To-Settle-Plots/f20b-fast.html' | relative_url }}" 
+  width="100%" 
+  style="border:none; overflow:hidden;"
+></iframe>
 
+<script>
+  const iframe = document.getElementById('f20b-fast');
+  iframe.onload = function() {
+    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
+  };
+</script>
 
 Sehwag is the emperor of destroying spin in test cricket. He starts with a strike rate of 103 in the first 20 balls of spin he faces, and then slows down to a mere 94. His strike rate in the first 20 balls is over 0.13 runs a ball  quicker than the second placed Sarfaraz (who was another famous destroyer of spin in the subcontinent) and his overall strike rate of 98.7 is about 0.1 run each ball than the second placed Harry Brook. Only in the scoring rate after facing 20 balls of spin does Harry Brook manage to edge out Sehwag — with a strike rate of 99.6 against Sehwag’s 94.5. However, Brook has played all his tests in England, New Zealand and Pakistan — the only Asian conditions where he played is on the Pakistani roads, including the game where England scored over 800. Sehwag, in contrast, played 68 matches in Asian conditions while averaging over 53 against spin, and over 58 against the tweakers in Asia. Sehwag is not just the emperor of playing spin — he was the kind that would mercilessly plunder his conquests. Indeed, Duckett rounds out the top 3 — with an F20B strike rate of 84.8 against spin. Unlike Brook, Duckett has 15 games in Asia (India, Pakistan and Bangladesh) while averaging 39.2. English batters top the charts when starting against spin — 4 off the top 15 are English, compared to 3 from India, 2 each from Sri Lanka and South Africa, and 1 from Pakistan, New Zealand and Australia. While we expect the Indians to be much more skilled when attacking spin, England is also one of the easiest places to eviscerate spinners. Spinners can at least rely on their top spin to extract bounce in Australia and South Africa, while spinners in England have traditionally been used as purely defensive options (think Ashley Giles, Monty Panesar, Jeet Raval and the list keeps going on). 
 
-<iframe src="{{ '/assets/plots/No-Time-To-Settle-Plots/f20b-spin.html' | relative_url }}" width="800" height="500"></iframe>
+<iframe 
+  id="f20b-spin"
+  src="{{ '/assets/plots/No-Time-To-Settle-Plots/f20b-spin.html' | relative_url }}" 
+  width="100%" 
+  style="border:none; overflow:hidden;"
+></iframe>
 
+<script>
+  const iframe = document.getElementById('f20b-spin');
+  iframe.onload = function() {
+    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
+  };
+</script>
 
 We take the geometric mean of the F20B strike rates against pace and spin (multiply the two and take the square root) as a measure of a player's rounded ability to attack both. Someone with a strike rate of 60 against pace and spin will have a higher geometric mean (60) than someone with a lopsided record against pace than spin (for example, a F20B strike of 80 against pace and 40 against spin will yield a geometric mean 56.5). Amongst batters with more than 500 runs against both pace and spin, only 16 batters have an F20B strike rate of over 60 against both these types of bowling. Batters tend to have preferences on attacking spin and pace. As with all the hype built up thus far, Sehwag and Duckett round out the top 2 in this list — Sehwag with a geometric mean of 95, followed by Duckett’s 84.4. 23 names make the list with at least 500 runs against both pace and spin and with a geometric mean of 60. Surprisingly, the 23rd name on the list is Sourav Ganguly. Someone criticized for batting slowly in ODIs, he was a particularly fast starter in tests, with an F20B strike of just above 60 against both pace and spin. 
 
-<iframe src="{{ '/assets/plots/No-Time-To-Settle-Plots/geo-mean.html' | relative_url }}" width="800" height="500"></iframe>
+<iframe 
+  id="geo-mean"
+  src="{{ '/assets/plots/No-Time-To-Settle-Plots/geo-mean.html' | relative_url }}" 
+  width="100%" 
+  style="border:none; overflow:hidden;"
+></iframe>
+
+<script>
+  const iframe = document.getElementById('geo-mean');
+  iframe.onload = function() {
+    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
+  };
+</script>
 
 Despite belonging to very different eras, Sehwag and Duckett end up looking oddly similar on the consistency charts — though both fall short of the “safe hands” they shared dressing rooms with. On average, Sehwag faced just over 50 balls per innings, Duckett a shade under at 48. The context, however, is wildly different: in Sehwag’s games, any batter averaging 25 or more typically lasted 82 balls; in Duckett’s era that number drops to 65. Having Tendulkar and Dravid soaking up overs makes your own consistency look thinner; Duckett, meanwhile, has mostly had Root as his statistical life raft. Where they diverge is in what happens after the start. Duckett is slightly better at getting going — his median stay is 35 balls to Sehwag’s 30 — but Sehwag turned his starts into monuments. Triple and double hundreds don’t grow on English hedgerows. Duckett’s gift is almost the opposite: near-automatic launches for Bazball England at a time when most openers are still fumbling with the keys. Look at how often they cross that 20-ball threshold, and their ability to get consistent starts regresses. Sehwag clears it in 63% of his innings, Duckett in 60%. The fast starters mentioned earlier orbit the same numbers — Dilshan at 62%, Sarfaraz at 64%. Brook, interestingly, is the most reliable of the quick-scorers, pushing through in 69% of innings. For context, Zimbabwe’s Craig Ervine tops the global charts (among batters with at least 50 innings) at a ludicrous 83%, just ahead of Dravid and Pujara’s monk-like 80%. Write a sentence about the fraction times crossing 20 balls compared to batters with average of at least 25 in their games.
 
-<iframe src="{{ '/assets/plots/No-Time-To-Settle-Plots/mean-median.html' | relative_url }}" width="800" height="500"></iframe>
+<iframe 
+  id="mean-median"
+  src="{{ '/assets/plots/No-Time-To-Settle-Plots/mean-median.html' | relative_url }}" 
+  width="100%" 
+  style="border:none; overflow:hidden;"
+></iframe>
 
-<iframe src="{{ '/assets/plots/No-Time-To-Settle-Plots/fraction-20.html' | relative_url }}" width="800" height="500"></iframe>
+<script>
+  const iframe = document.getElementById('mean-median');
+  iframe.onload = function() {
+    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
+  };
+</script>
+
+
+<iframe 
+  id="fraction-20"
+  src="{{ '/assets/plots/No-Time-To-Settle-Plots/fraction-20.html' | relative_url }}" 
+  width="100%" 
+  style="border:none; overflow:hidden;"
+></iframe>
+
+<script>
+  const iframe = document.getElementById('fraction-20');
+  iframe.onload = function() {
+    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
+  };
+</script>
 
 The two maniacs — Sehwag and Duckett — aren’t just batters, they’re the jump-scares in cricket’s horror movie: you know something’s coming, you even know it’s coming soon (hint: roughly every other second), yet it’s somehow still fun when it arrives. With Sehwag, it was like what the first UFO sighting would be: everyone criticized, had their opinions, shook their heads, and then quietly wondered if the universe of batting had just changed forever. Duckett, on the other hand, is straight out of an Isaac Asimov novel — one unlikely civilization that somehow wins the space race while the rest of the galaxy scrambles to catch up. And in the end, whether it’s a breaking news alert about aliens or a thousand pages of Asimov’s intergalactic chess — there is enough spectacle to thoroughly keep us hooked. 
