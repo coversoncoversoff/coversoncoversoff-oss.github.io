@@ -72,6 +72,8 @@
           legend: { display: true },
           tooltip: {
             callbacks: {
+              // 🔹 remove the default title (year shown above tooltip)
+              title: function() { return ''; },
               label: function(context) {
                 let year = context.label;
                 let value = context.parsed.y;
