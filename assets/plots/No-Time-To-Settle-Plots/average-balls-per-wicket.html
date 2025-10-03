@@ -63,13 +63,21 @@
       },
       options: {
         responsive: true,
-        maintainAspectRatio: true, // keep proportional
+        maintainAspectRatio: true, // keep proportional, no vertical scroll
         plugins: {
           title: {
             display: true,
             text: 'Average Balls per Wicket Over Years'
           },
-          legend: { display: true }
+          legend: { display: true },
+          tooltip: {
+            callbacks: {
+              title: function() { return ''; }, // remove extra bold title
+              label: function(context) {
+                return context.label + " : " + context.raw.toFixed(2);
+              }
+            }
+          }
         },
         scales: {
           x: { title: { display: true, text: 'Year' } },
