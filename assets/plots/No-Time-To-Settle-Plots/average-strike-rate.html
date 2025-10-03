@@ -5,9 +5,37 @@
   <title>Average Strike Rate Over Years</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; background:#f9f9f9; }
-    .chart-container { width: 100%; max-width: 900px; height: auto; margin: 40px auto; background:#fff; padding:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1); border-radius:10px; }
-    h2 { text-align:center; margin-top:40px; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;   /* prevent horizontal scroll */
+      width: 100%;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+    }
+
+    .chart-container {
+      box-sizing: border-box;   /* include padding in width calculation */
+      width: 100%;
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 40px 10px;   /* avoid overflow */
+    }
+
+    canvas {
+      display: block;
+      width: 100% !important;   /* fill container */
+      height: auto !important;  /* maintain aspect ratio */
+      max-width: 100%;
+    }
   </style>
 </head>
 <body>
@@ -34,10 +62,19 @@
         }]
       },
       options: {
-        responsive:true,
-        maintainAspectRatio: false,
-        plugins:{title:{display:true,text:'Average Strike Rate Over Years'}, legend:{display:true}},
-        scales:{x:{title:{display:true,text:'Year'}},y:{title:{display:true,text:'Average Strike Rate'},beginAtZero:false}}
+        responsive: true,
+        maintainAspectRatio: true, // ✅ responsive with aspect ratio
+        plugins: {
+          title: {
+            display: true,
+            text: 'Average Strike Rate Over Years'
+          },
+          legend: { display: true }
+        },
+        scales: {
+          x: { title: { display: true, text: 'Year' } },
+          y: { title: { display: true, text: 'Average Strike Rate' }, beginAtZero: false }
+        }
       }
     });
   </script>
