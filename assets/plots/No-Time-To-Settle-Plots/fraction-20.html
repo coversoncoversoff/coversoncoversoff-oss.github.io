@@ -2,21 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Fraction of Times &gt;20 Balls: Sehwag vs Duckett</title>
+  <title>Fraction of Times >20 Balls: Sehwag vs Duckett</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
       padding: 20px;
       background: #f9f9f9;
+      margin: 0; /* prevent body scroll */
+      overflow-x: hidden; /* stop horizontal scroll */
     }
     .chart-container {
       width: 100%;
       max-width: 800px;
-      height: auto;
+      aspect-ratio: 4/3;   /* ✅ taller aspect ratio than 16/9 */
       margin: 40px auto;
       background: #fff;
       padding: 20px;
+      box-sizing: border-box; /* ✅ padding included in width */
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       border-radius: 10px;
     }
@@ -28,7 +31,7 @@
 </head>
 <body>
 
-  <h2>Fraction of Times &gt;20 Balls: Sehwag vs Duckett</h2>
+  <h2>Fraction of Times >20 Balls: Sehwag vs Duckett</h2>
   <div class="chart-container">
     <canvas id="fraction20Chart"></canvas>
   </div>
@@ -36,11 +39,8 @@
   <script>
     const ctx = document.getElementById('fraction20Chart').getContext('2d');
 
-    const labels = ["Fraction >20 Balls","Fraction >20 Balls"];
-    const players = ["Sehwag","Duckett"];
-
     const data = {
-      labels: labels,
+      labels: ["Sehwag", "Duckett"],
       datasets: [
         {
           label: 'Others',
@@ -64,50 +64,30 @@
       data: data,
       options: {
         responsive: true,
-        maintainAspectRatio: false,
+        maintainAspectRatio: false, // works with aspect-ratio parent
         plugins: {
           legend: { position: 'top' },
           title: { 
             display: true, 
-            text: 'Fraction of Times &gt;20 Balls: Sehwag & Duckett vs Others (players played in same matches with average > 25)'
+            text: 'Fraction of Times >20 Balls: Sehwag & Duckett vs Others (players played in same matches with average > 25)'
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                return context.dataset.label + ": " + context.raw.toFixed(2);
+              }
+            }
           }
         },
         scales: {
-          y: { beginAtZero: true, max: 1 },
-          x: { stacked: false, ticks: { callback: () => "" } }
+          y: { 
+            beginAtZero: true, 
+            max: 1,
+            ticks: { callback: value => value.toFixed(2) }
+          },
+          x: { title: { display: true, text: "Players" } }
         }
-      },
-      plugins: [{
-        id: 'topLabelsAndPartition',
-        afterDraw: chart => {
-          const xAxis = chart.scales.x;
-          const ctx = chart.ctx;
-          ctx.save();
-          ctx.textAlign = 'center';
-          ctx.textBaseline = 'bottom';
-          ctx.fillStyle = 'black';
-
-          // Draw player names above clusters
-          const clusterCenters = [
-            xAxis.getPixelForTick(0),
-            xAxis.getPixelForTick(1)
-          ];
-          players.forEach((player, i) => {
-            ctx.fillText(player, clusterCenters[i], xAxis.top - 15);
-          });
-
-          // Draw thicker vertical line between clusters
-          const partitionX = (xAxis.getPixelForTick(0) + xAxis.getPixelForTick(1)) / 2;
-          ctx.beginPath();
-          ctx.moveTo(partitionX, xAxis.top);
-          ctx.lineTo(partitionX, chart.chartArea.bottom);
-          ctx.lineWidth = 3;
-          ctx.strokeStyle = '#333';
-          ctx.stroke();
-
-          ctx.restore();
-        }
-      }]
+      }
     });
   </script>
 
