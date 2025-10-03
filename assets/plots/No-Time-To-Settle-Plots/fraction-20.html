@@ -15,11 +15,11 @@
     .chart-container {
       width: 100%;
       max-width: 800px;
-      aspect-ratio: 4/3;   /* ✅ taller aspect ratio than 16/9 */
+      aspect-ratio: 4/3;   /* taller aspect ratio */
       margin: 40px auto;
       background: #fff;
       padding: 20px;
-      box-sizing: border-box; /* ✅ padding included in width */
+      box-sizing: border-box; 
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       border-radius: 10px;
     }
@@ -46,15 +46,15 @@
           label: 'Others',
           data: [0.78, 0.75],
           backgroundColor: 'rgba(255, 159, 64, 0.8)',
-          barPercentage: 0.5,
-          categoryPercentage: 0.5
+          barPercentage: 0.4,   // tighter bars
+          categoryPercentage: 0.6
         },
         {
           label: 'Player',
           data: [0.63, 0.61],
           backgroundColor: 'rgba(255, 99, 132, 0.8)',
-          barPercentage: 0.5,
-          categoryPercentage: 0.5
+          barPercentage: 0.4,   // tighter bars
+          categoryPercentage: 0.6
         }
       ]
     };
@@ -64,7 +64,7 @@
       data: data,
       options: {
         responsive: true,
-        maintainAspectRatio: false, // works with aspect-ratio parent
+        maintainAspectRatio: false,
         plugins: {
           legend: { position: 'top' },
           title: { 
@@ -73,8 +73,15 @@
           },
           tooltip: {
             callbacks: {
+              title: function() {
+                return ''; // 🚫 remove bold title
+              },
               label: function(context) {
-                return context.dataset.label + ": " + context.raw.toFixed(2);
+                if (context.dataset.label === "Player") {
+                  return context.label + ": " + context.raw.toFixed(2);
+                } else {
+                  return "Others: " + context.raw.toFixed(2);
+                }
               }
             }
           }
