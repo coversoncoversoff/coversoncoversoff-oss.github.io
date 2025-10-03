@@ -10,12 +10,11 @@
       padding: 20px;
       background: #f9f9f9;
       margin: 0;
-      overflow-x: hidden;
     }
     .chart-container {
       width: 100%;
-      max-width: 900px;
-      aspect-ratio: 4/3;   /* taller chart */
+      max-width: 950px;
+      aspect-ratio: 16/9;
       margin: 40px auto;
       background: #fff;
       padding: 20px;
@@ -38,25 +37,31 @@
   <script>
     const ctx = document.getElementById('meanMedianChart').getContext('2d');
 
+    // full player names for each bar
+    const players = ["Sehwag", "Sehwag", "Duckett", "Duckett"];
+    const metrics = ["Mean", "Median", "Mean", "Median"]; // only for axis labels
+
     const data = {
       labels: [
-        "Sehwag - Mean", "Sehwag - Median",
-        "Duckett - Mean", "Duckett - Median"
+        ["Sehwag", "Mean"], 
+        ["Sehwag", "Median"],
+        ["Duckett", "Mean"], 
+        ["Duckett", "Median"]
       ],
       datasets: [
         {
           label: 'Others',
           data: [82.42, 53, 65.43, 47],
           backgroundColor: 'rgba(255, 159, 64, 0.8)',
-          barPercentage: 0.5,
-          categoryPercentage: 0.5
+          barPercentage: 0.45,
+          categoryPercentage: 0.6
         },
         {
           label: 'Player',
           data: [50.33, 30, 48.31, 35],
           backgroundColor: 'rgba(255, 99, 132, 0.8)',
-          barPercentage: 0.5,
-          categoryPercentage: 0.5
+          barPercentage: 0.45,
+          categoryPercentage: 0.6
         }
       ]
     };
@@ -75,21 +80,26 @@
           },
           tooltip: {
             callbacks: {
-              title: function(context) {
-                // show metric only, not player name
-                const label = context[0].label.split(" - ")[1]; 
-                return label; // "Mean" or "Median"
-              },
+              title: () => "", // no bold header
               label: function(context) {
-                // show dataset label (Player/Others) + value
-                return context.dataset.label + ": " + context.raw.toFixed(2);
+                const i = context.dataIndex;
+                const player = players[i]; // Sehwag or Duckett
+
+                if (context.dataset.label === "Player") {
+                  return player + " – " + context.raw.toFixed(2);
+                } else {
+                  return "Others – " + context.raw.toFixed(2);
+                }
               }
             }
           }
         },
         scales: {
-          y: { beginAtZero: true },
-          x: { stacked: false, ticks: { font: { size: 12 } } }
+          x: {
+            stacked: false,
+            ticks: { font: { size: 13 } }
+          },
+          y: { beginAtZero: true }
         }
       }
     });
