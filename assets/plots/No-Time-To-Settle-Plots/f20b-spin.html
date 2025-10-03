@@ -5,9 +5,34 @@
   <title>Top F20B Strike Rates vs Spin</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; background:#f9f9f9; }
-    .chart-container { width: 100%; max-width: 900px; height: auto; margin: 40px auto; background:#fff; padding:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1); border-radius:10px; }
-    h2 { text-align:center; margin-top:40px; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;   /* ✅ prevent horizontal scroll */
+      width: 100%;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+    }
+    .chart-container {
+      box-sizing: border-box;   /* ✅ padding stays inside width */
+      width: 100%;
+      max-width: 900px;
+      margin: 40px auto;
+      background:#fff;
+      padding:20px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      border-radius:10px;
+    }
+    h2 {
+      text-align:center;
+      margin:40px 10px;   /* ✅ avoid forcing overflow */
+    }
+    canvas {
+      display:block;
+      width:100% !important;   /* ✅ responsive */
+      height:auto !important;  /* ✅ keep aspect ratio */
+      max-width:100%;
+    }
   </style>
 </head>
 <body>
@@ -21,10 +46,42 @@
     new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ["V Sehwag","Sarfraz Ahmed","BM Duckett","RR Pant","CH Gayle","TM Dilshan","YBK Jaiswal","GP Swann","HC Brook","Z Crawley","N Dickwella","Q de Kock","TG Southee","KA Maharaj","DA Warner"],
-        datasets: [{ label:'Strike rate vs spin (first 20 balls)', data:[103.24,90.47,84.79,80.62,79.38,79.14,78.44,78.37,76.65,73.28,71.12,70.52,68.46,68.14,67.98], backgroundColor:'rgba(54,162,235,0.7)', borderColor:'rgba(54,162,235,1)', borderWidth:1 }]
+        labels: [
+          "V Sehwag","Sarfraz Ahmed","BM Duckett","RR Pant","CH Gayle",
+          "TM Dilshan","YBK Jaiswal","GP Swann","HC Brook","Z Crawley",
+          "N Dickwella","Q de Kock","TG Southee","KA Maharaj","DA Warner"
+        ],
+        datasets: [{
+          data:[103.24,90.47,84.79,80.62,79.38,79.14,78.44,78.37,76.65,73.28,71.12,70.52,68.46,68.14,67.98],
+          backgroundColor:'rgba(54,162,235,0.7)',
+          borderColor:'rgba(54,162,235,1)',
+          borderWidth:1
+        }]
       },
-      options: { indexAxis:'y', responsive:true, maintainAspectRatio: false, plugins:{legend:{display:false}, title:{display:true,text:'Top F20B Strike Rates vs Spin'}}, scales:{x:{beginAtZero:true}} }
+      options: { 
+        indexAxis:'y',
+        responsive:true,
+        maintainAspectRatio:true,  // ✅ no overflow
+        plugins:{
+          legend:{ display:false },
+          title:{ display:true, text:'Top F20B Strike Rates vs Spin' },
+          tooltip:{
+            callbacks:{
+              title: () => '', // ✅ remove bold duplicate
+              label: context => context.label + " : " + context.raw.toFixed(2)
+            }
+          }
+        },
+        scales:{
+          x:{ 
+            beginAtZero:true,
+            title:{ display:true, text:'Strike Rate' }
+          },
+          y:{ 
+            title:{ display:true, text:'Player' }
+          }
+        }
+      }
     });
   </script>
 </body>
