@@ -56,7 +56,7 @@
           "Sarfraz Ahmed", "RR Pant", "DA Warner", "CH Gayle", "YBK Jaiswal"
         ],
         datasets: [{
-          label: 'First 20 Balls Strike Rate',
+          label: 'First 20 Balls Strike Rate', // legend label only
           data: [
             88.49938499, 81.60418483, 80.61068702, 78.19025522, 77.72397094,
             72.72151899, 71.51854444, 69.89088764, 69.34189406, 68.06282723
@@ -69,7 +69,7 @@
       options: {
         indexAxis: 'y',
         responsive: true,
-        maintainAspectRatio: true, // ✅ keep proportional scaling
+        maintainAspectRatio: true,
         plugins: {
           legend: { display: true },
           title: {
@@ -78,8 +78,10 @@
           },
           tooltip: {
             callbacks: {
+              title: function() {
+                return ''; // remove the extra bold player line
+              },
               label: function(context) {
-                // Show custom tooltip "Player : Strike Rate"
                 return context.label + " : " + context.raw.toFixed(2);
               }
             }
