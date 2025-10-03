@@ -13,7 +13,7 @@
     .chart-container {
       width: 100%;
       max-width: 800px;
-      height: 450px;
+      height: auto;
       margin: 40px auto;
       background: #fff;
       padding: 20px;
@@ -64,6 +64,7 @@
       data: data,
       options: {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
           legend: { position: 'top' },
           title: { 
