@@ -5,9 +5,37 @@
   <title>Average Balls per Wicket Over Years</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; background:#f9f9f9; }
-    .chart-container { width: 100%; max-width: 900px; height: auto; margin: 40px auto; background:#fff; padding:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1); border-radius:10px; }
-    h2 { text-align:center; margin-top:40px; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;   /* prevent horizontal scroll */
+      width: 100%;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+    }
+
+    .chart-container {
+      box-sizing: border-box;   /* include padding in width calculation */
+      width: 100%;
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 40px 10px;   /* prevent heading from overflowing viewport */
+    }
+
+    canvas {
+      display: block;
+      width: 100% !important;   /* fill container */
+      height: auto !important;  /* maintain aspect ratio */
+      max-width: 100%;
+    }
   </style>
 </head>
 <body>
@@ -24,7 +52,7 @@
         labels: [2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025],
         datasets: [{
           label: 'Average Balls per Wicket',
-          data: [124.1108491,155.7562077,146.2182203,152.3584071,130.4861111,147.0157658,122.6648649,127.5357143,127.8689516,132.7245283,123.0856672,107.4541063,99.13452915,90.71216617,114.6494662,123.8545082,86.17975207,99.16104869,71.35331906],
+          data: [124.11,155.76,146.22,152.36,130.49,147.02,122.66,127.54,127.87,132.72,123.09,107.45,99.13,90.71,114.65,123.85,86.18,99.16,71.35],
           borderColor: 'rgba(255, 99, 132, 1)',
           backgroundColor: 'rgba(255, 99, 132, 0.2)',
           fill: true,
@@ -34,10 +62,19 @@
         }]
       },
       options: {
-        responsive:true,
-        maintainAspectRatio: false,
-        plugins:{title:{display:true,text:'Average Balls per Wicket Over Years'}, legend:{display:true}},
-        scales:{x:{title:{display:true,text:'Year'}},y:{title:{display:true,text:'Average Balls per Wicket'},beginAtZero:false}}
+        responsive: true,
+        maintainAspectRatio: true, // keep proportional
+        plugins: {
+          title: {
+            display: true,
+            text: 'Average Balls per Wicket Over Years'
+          },
+          legend: { display: true }
+        },
+        scales: {
+          x: { title: { display: true, text: 'Year' } },
+          y: { title: { display: true, text: 'Average Balls per Wicket' }, beginAtZero: false }
+        }
       }
     });
   </script>
