@@ -5,10 +5,12 @@
   <title>Top F20B Geometric Mean Strike Rates</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    body {
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
       font-family: Arial, sans-serif;
       background: #f9f9f9;
-      padding: 20px;
     }
     .chart-container {
       width: 100%;
@@ -18,10 +20,12 @@
       padding: 20px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       border-radius: 10px;
+      overflow: hidden;
+      box-sizing: border-box;
     }
     canvas {
-      /* Make canvas height large enough for all labels */
-      height: auto !important;
+      display: block;
+      max-width: 100% !important;
     }
   </style>
 </head>
@@ -52,7 +56,12 @@
   const combinedGeo = battersGeo.map((name, i) => ({ name, rate: geoStrikeRates[i] }))
                                 .sort((a, b) => b.rate - a.rate);
 
-  const ctxGeo = document.getElementById('geoMeanChart').getContext('2d');
+  // ✅ Dynamic height: 30px per bar
+  const chartHeight = combinedGeo.length * 30; 
+  const canvas = document.getElementById('geoMeanChart');
+  canvas.height = chartHeight;
+
+  const ctxGeo = canvas.getContext('2d');
 
   new Chart(ctxGeo, {
     type: 'bar',
@@ -75,12 +84,19 @@
           display: true,
           text: 'Top F20B Geometric Mean Strike Rates (Spin 500+ runs, Fast 500+ runs)'
         },
-        legend: { display: false }
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              return context.label + " : " + context.raw.toFixed(2);
+            }
+          }
+        }
       },
       scales: {
         y: {
           ticks: {
-            font: { size: 12 } // smaller font to fit long list
+            font: { size: 12 }
           }
         },
         x: { beginAtZero: true }
