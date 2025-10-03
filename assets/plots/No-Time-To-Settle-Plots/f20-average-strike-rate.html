@@ -54,7 +54,7 @@
         labels: [2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015,
                  2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
         datasets: [{
-          label: 'Average Strike Rate',
+          label: 'Average Strike Rate', // <-- won't appear in tooltip anymore
           data: [41.548518, 42.673614, 43.738957, 46.470598, 43.777229,
                  44.818312, 43.139187, 42.509218, 46.782939, 43.899172,
                  43.545936, 43.164810, 41.605269, 42.877053, 40.317106,
@@ -69,12 +69,23 @@
       },
       options: {
         responsive: true,
-        maintainAspectRatio: true, // ✅ responsive with proportional scaling
+        maintainAspectRatio: true,
         plugins: {
           legend: { display: true },
           title: {
             display: true,
             text: 'First 20 Balls Average Strike Rate Over Years'
+          },
+          tooltip: {
+            callbacks: {
+              // remove dataset label completely
+              title: function() { return ''; },
+              label: function(context) {
+                let year = context.label;
+                let value = context.parsed.y;
+                return year + ': ' + value.toFixed(2);
+              }
+            }
           }
         },
         scales: {
