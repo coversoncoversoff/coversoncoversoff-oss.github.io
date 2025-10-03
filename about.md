@@ -37,7 +37,7 @@ permalink: /about/
   </div>
 
   <div class="team-member">
-    <a href="{{ '/about/Aadityan' | relative_url }}">
+    <a href="{{ '/about/aadityan' | relative_url }}">
       <img src="/assets/images/aadityan.jpg" alt="Aadityan Ganesh">
       <h3>Aadityan</h3>
     </a>
