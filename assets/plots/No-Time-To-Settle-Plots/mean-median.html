@@ -5,9 +5,28 @@
   <title>Sehwag vs Duckett: Mean & Median Balls</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; background:#f9f9f9; }
-    .chart-container { width: 100%; max-width: 900px; height: auto; margin: 40px auto; background:#fff; padding:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1); border-radius:10px; }
-    h2 { text-align:center; margin-top:40px; }
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f9f9f9;
+      margin: 0;
+      overflow-x: hidden;
+    }
+    .chart-container {
+      width: 100%;
+      max-width: 900px;
+      aspect-ratio: 4/3;   /* taller chart */
+      margin: 40px auto;
+      background: #fff;
+      padding: 20px;
+      box-sizing: border-box;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    h2 {
+      text-align: center;
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
@@ -18,16 +37,61 @@
 
   <script>
     const ctx = document.getElementById('meanMedianChart').getContext('2d');
+
+    const data = {
+      labels: [
+        "Sehwag - Mean", "Sehwag - Median",
+        "Duckett - Mean", "Duckett - Median"
+      ],
+      datasets: [
+        {
+          label: 'Others',
+          data: [82.42, 53, 65.43, 47],
+          backgroundColor: 'rgba(255, 159, 64, 0.8)',
+          barPercentage: 0.5,
+          categoryPercentage: 0.5
+        },
+        {
+          label: 'Player',
+          data: [50.33, 30, 48.31, 35],
+          backgroundColor: 'rgba(255, 99, 132, 0.8)',
+          barPercentage: 0.5,
+          categoryPercentage: 0.5
+        }
+      ]
+    };
+
     new Chart(ctx, {
       type: 'bar',
-      data: {
-        labels: ["Mean","Median","Mean","Median"],
-        datasets:[
-          {label:'Others', data:[82.42,53,65.43,47], backgroundColor:'rgba(255,159,64,0.8)', barPercentage:0.5, categoryPercentage:0.5},
-          {label:'Player', data:[50.33,30,48.31,35], backgroundColor:'rgba(255,99,132,0.8)', barPercentage:0.5, categoryPercentage:0.5}
-        ]
-      },
-      options:{responsive:true, maintainAspectRatio: false, plugins:{legend:{position:'top'}, title:{display:true,text:'Mean & Median Balls: Sehwag & Duckett vs Others'}}, scales:{y:{beginAtZero:true}, x:{stacked:false}}}
+      data: data,
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'top' },
+          title: { 
+            display: true, 
+            text: 'Mean & Median Balls: Sehwag & Duckett vs Others'
+          },
+          tooltip: {
+            callbacks: {
+              title: function(context) {
+                // show metric only, not player name
+                const label = context[0].label.split(" - ")[1]; 
+                return label; // "Mean" or "Median"
+              },
+              label: function(context) {
+                // show dataset label (Player/Others) + value
+                return context.dataset.label + ": " + context.raw.toFixed(2);
+              }
+            }
+          }
+        },
+        scales: {
+          y: { beginAtZero: true },
+          x: { stacked: false, ticks: { font: { size: 12 } } }
+        }
+      }
     });
   </script>
 </body>
