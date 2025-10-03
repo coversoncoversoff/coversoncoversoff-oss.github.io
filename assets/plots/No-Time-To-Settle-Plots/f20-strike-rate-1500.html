@@ -5,24 +5,36 @@
   <title>First 20 Balls Strike Rate</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    body {
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;   /* prevent horizontal scroll */
+      width: 100%;
       font-family: Arial, sans-serif;
-      padding: 20px;
       background: #f9f9f9;
     }
+
     .chart-container {
+      box-sizing: border-box;   /* include padding in width */
       width: 100%;
       max-width: 900px;
-      height: auto;
       margin: 40px auto;
       background: #fff;
       padding: 20px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       border-radius: 10px;
     }
+
     h2 {
       text-align: center;
-      margin-top: 40px;
+      margin: 40px 10px;   /* prevents horizontal overflow */
+    }
+
+    canvas {
+      display: block;
+      width: 100% !important;   /* responsive */
+      height: auto !important;  /* keep aspect ratio */
+      max-width: 100%;
     }
   </style>
 </head>
@@ -36,35 +48,41 @@
   <script>
     const ctx = document.getElementById('strikeRateChart').getContext('2d');
 
-    const data = {
-      labels: [
-        "V Sehwag", "BM Duckett", "TG Southee", "TM Dilshan", "HC Brook",
-        "Sarfraz Ahmed", "RR Pant", "DA Warner", "CH Gayle", "YBK Jaiswal"
-      ],
-      datasets: [{
-        label: 'First 20 Balls Strike Rate',
-        data: [
-          88.49938499, 81.60418483, 80.61068702, 78.19025522, 77.72397094,
-          72.72151899, 71.51854444, 69.89088764, 69.34189406, 68.06282723
-        ],
-        backgroundColor: 'rgba(75, 192, 192, 0.6)',
-        borderColor: 'rgba(75, 192, 192, 1)',
-        borderWidth: 1
-      }]
-    };
-
     new Chart(ctx, {
       type: 'bar',
-      data: data,
+      data: {
+        labels: [
+          "V Sehwag", "BM Duckett", "TG Southee", "TM Dilshan", "HC Brook",
+          "Sarfraz Ahmed", "RR Pant", "DA Warner", "CH Gayle", "YBK Jaiswal"
+        ],
+        datasets: [{
+          label: 'First 20 Balls Strike Rate',
+          data: [
+            88.49938499, 81.60418483, 80.61068702, 78.19025522, 77.72397094,
+            72.72151899, 71.51854444, 69.89088764, 69.34189406, 68.06282723
+          ],
+          backgroundColor: 'rgba(75, 192, 192, 0.6)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1
+        }]
+      },
       options: {
         indexAxis: 'y',
         responsive: true,
-        maintainAspectRatio: false,
+        maintainAspectRatio: true, // ✅ keep proportional scaling
         plugins: {
           legend: { display: true },
           title: {
             display: true,
             text: 'First 20 Balls Strike Rate of Players with >1500 Runs'
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                // Show custom tooltip "Player : Strike Rate"
+                return context.label + " : " + context.raw.toFixed(2);
+              }
+            }
           }
         },
         scales: {
