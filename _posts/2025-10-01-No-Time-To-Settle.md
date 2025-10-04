@@ -1,10 +1,9 @@
 ---
 layout: post
-title: "No Time To Settle"
+title: "No Time To Settle - Starting an innings like Sehwag and Duckett"
 date: 2025-10-01
 categories: cricket data
 ---
-## *Starting an innings like Sehwag and Duckett*
 Cricket has long drilled into us the etiquette of batting: start cautiously, “get your eye in,” and only then begin to accelerate. To do otherwise was seen as almost impolite. The numbers reflect this convention. Since ball-by-ball records began, the average top-six batter has scored at a strike rate of just 44 in their first 20 balls — less than three runs an over — before climbing to a steady 51 once set. In this world of well-mannered beginnings, two players have torn up the script. Virender Sehwag’s outrageous first 20 ball (F20B) strike rate of 88.5 is miles clear of the third-placed Tim Southee’s 80.6 (amongst batters with at least 1500 runs over their career). To highlight just how absurd this is: Sehwag averaged just under 50 in Tests while scoring nearly twice as fast as the average batter at the start of an innings. More recently, Ben Duckett’s 81.6 shines even brighter in an era when batting averages have fallen off a cliff. 
 
 
