@@ -1,9 +1,12 @@
 ---
 layout: post
 title: "No Time To Settle - Starting an innings like Sehwag and Duckett"
+author: "Atharv Tambade and Aadityan Ganesh "
 date: 2025-10-01
-categories: cricket data
+categories: descriptive test cricket
+tags: [Sehwag, Duckett, strike rate, F20B]
 ---
+
 Cricket has long drilled into us the etiquette of batting: start cautiously, “get your eye in,” and only then begin to accelerate. To do otherwise was seen as almost impolite. The numbers reflect this convention. Since ball-by-ball records began, the average top-six batter has scored at a strike rate of just 44 in their first 20 balls — less than three runs an over — before climbing to a steady 51 once set. In this world of well-mannered beginnings, two players have torn up the script. Virender Sehwag’s outrageous first 20 ball (F20B) strike rate of 88.5 is miles clear of the third-placed Tim Southee’s 80.6 (amongst batters with at least 1500 runs over their career). To highlight just how absurd this is: Sehwag averaged just under 50 in Tests while scoring nearly twice as fast as the average batter at the start of an innings. More recently, Ben Duckett’s 81.6 shines even brighter in an era when batting averages have fallen off a cliff. 
 
 
@@ -87,7 +90,5 @@ Despite belonging to very different eras, Sehwag and Duckett end up looking oddl
   height="600" 
   style="border:none; overflow:hidden;"
 ></iframe>
-
-
 
 The two maniacs — Sehwag and Duckett — aren’t just batters, they’re the jump-scares in cricket’s horror movie: you know something’s coming, you even know it’s coming soon (hint: roughly every other second), yet it’s somehow still fun when it arrives. With Sehwag, it was like what the first UFO sighting would be: everyone criticized, had their opinions, shook their heads, and then quietly wondered if the universe of batting had just changed forever. Duckett, on the other hand, is straight out of an Isaac Asimov novel — one unlikely civilization that somehow wins the space race while the rest of the galaxy scrambles to catch up. And in the end, whether it’s a breaking news alert about aliens or a thousand pages of Asimov’s intergalactic chess — there is enough spectacle to thoroughly keep us hooked. 
