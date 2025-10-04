@@ -80,19 +80,12 @@ We take the geometric mean of the F20B strike rates against pace and spin (multi
   style="border:none; overflow:hidden;"
 ></iframe>
 
-Despite belonging to very different eras, Sehwag and Duckett end up looking oddly similar on the consistency charts — though both fall short of the “safe hands” they shared dressing rooms with. On average, Sehwag faced just over 50 balls per innings, Duckett a shade under at 48. The context, however, is wildly different: in Sehwag’s games, any batter averaging 25 or more typically lasted 82 balls; in Duckett’s era that number drops to 65. Having Tendulkar and Dravid soaking up overs makes your own consistency look thinner; Duckett, meanwhile, has mostly had Root as his statistical life raft. Where they diverge is in what happens after the start. Duckett is slightly better at getting going — his median stay is 35 balls to Sehwag’s 30 — but Sehwag turned his starts into monuments. Triple and double hundreds don’t grow on English hedgerows. Duckett’s gift is almost the opposite: near-automatic launches for Bazball England at a time when most openers are still fumbling with the keys. Look at how often they cross that 20-ball threshold, and their ability to get consistent starts regresses. Sehwag clears it in 63% of his innings, Duckett in 60%. The fast starters mentioned earlier orbit the same numbers — Dilshan at 62%, Sarfaraz at 64%. Brook, interestingly, is the most reliable of the quick-scorers, pushing through in 69% of innings. For context, Zimbabwe’s Craig Ervine tops the global charts (among batters with at least 50 innings) at a ludicrous 83%, just ahead of Dravid and Pujara’s monk-like 80%. Write a sentence about the fraction times crossing 20 balls compared to batters with average of at least 25 in their games.
+Despite belonging to very different eras, Sehwag and Duckett end up looking oddly similar on the consistency charts — though both fall short of the “safe hands” they shared dressing rooms with. On average, Sehwag faced just over 50 balls per innings, Duckett a shade under at 48. The context, however, is wildly different: in Sehwag’s games, any batter averaging 25 or more typically lasted 82 balls; in Duckett’s era that number drops to 65. Having Tendulkar and Dravid soaking up overs makes your own consistency look thinner; Duckett, meanwhile, has mostly had Root as his statistical life raft. Where they diverge is in what happens after the start. Duckett is slightly better at getting going — his median stay is 35 balls to Sehwag’s 30 — but Sehwag turned his starts into monuments. Triple and double hundreds don’t grow on English hedgerows. Duckett’s gift is almost the opposite: near-automatic launches for Bazball England at a time when most openers are still fumbling with the keys. Look at how often they cross that 20-ball threshold, and their ability to get consistent starts regresses. Sehwag clears it in 63% of his innings, Duckett in 60%. The fast starters mentioned earlier orbit the same numbers — Dilshan at 62%, Sarfaraz at 64%. Brook, interestingly, is the most reliable of the quick-scorers, pushing through in 69% of innings. For context, Zimbabwe’s Craig Ervine tops the global charts (among batters with at least 50 innings) at a ludicrous 83%, just ahead of Dravid and Pujara’s monk-like 80%.
 
 <iframe 
   src="{{ '/assets/plots/No-Time-To-Settle-Plots/mean-median.html' | relative_url }}" 
   width="100%" 
   height="600" 
-  style="border:none; overflow:hidden;"
-></iframe>
-
-<iframe 
-  src="{{ '/assets/plots/No-Time-To-Settle-Plots/fraction-20.html' | relative_url }}" 
-  width="100%" 
-  height="700" 
   style="border:none; overflow:hidden;"
 ></iframe>
 
