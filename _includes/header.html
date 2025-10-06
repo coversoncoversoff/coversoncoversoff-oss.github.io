@@ -1,7 +1,7 @@
 <header class="site-header" role="banner">
   <div class="wrapper">
     <!-- Site title / logo -->
-    <a class="site-title" rel="author" href="{{ '/' | relative_url }}">
+    <a class="site-title" rel="author" href="{{ site.baseurl }}/">
       {{ site.title | escape }}
     </a>
 
@@ -25,7 +25,7 @@
       <!-- Navigation links from _config.yml -->
       <div class="trigger">
         {% for link in site.nav_links %}
-          <a class="page-link" href="{{ link.url | relative_url }}">{{ link.title }}</a>
+          <a class="page-link" href="{{ site.baseurl }}{{ link.url }}">{{ link.title }}</a>
         {% endfor %}
       </div>
     </nav>
