@@ -1,13 +1,9 @@
-# _config.yml
 title: "Covers on Covers Off"
-description: 
+description:
 theme: minima
+url: "https://coversoncoversoff.github.io"
+baseurl: ""
 
-# Site URL setup
-url: "https://coversoncoversoff-oss.github.io"
-baseurl: ""  # Important: keep empty for user/organization sites
-
-# Add custom pages to navigation
 nav_links:
   - title: "Home"
     url: /
@@ -15,6 +11,7 @@ nav_links:
     url: /about/
   - title: "About Site"
     url: /about-site/
+
 
 
 # Welcome to Jekyll!
