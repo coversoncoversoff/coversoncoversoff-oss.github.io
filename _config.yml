@@ -1,7 +1,11 @@
 # _config.yml
-title: Reading Between The Wickets
-description: Cricket through a data-driven lens
+title: "Covers on Covers Off"
+description: 
 theme: minima
+
+# Site URL setup
+url: "https://coversoncoversoff-oss.github.io"
+baseurl: ""  # Important: keep empty for user/organization sites
 
 # Add custom pages to navigation
 nav_links:
@@ -11,8 +15,6 @@ nav_links:
     url: /about/
   - title: "About Site"
     url: /about-site/
-
-
 
 
 # Welcome to Jekyll!
