@@ -31,14 +31,14 @@ permalink: /about/
 <div class="team-container">
   <div class="team-member">
     <a href="{{ '/about/atharv' | relative_url }}">
-      <img src="/assets/images/Atharv.jpg" alt="Atharv Tambade">
+      <img src="{{ site.baseurl }}/assets/images/Atharv.jpg" alt="Atharv Tambade">
       <h3>Atharv</h3>
     </a>
   </div>
 
   <div class="team-member">
     <a href="{{ '/about/aadityan' | relative_url }}">
-      <img src="/assets/images/aadityan.jpg" alt="Aadityan Ganesh">
+      <img src="{{ site.baseurl }}/assets/images/aadityan.jpg" alt="Aadityan Ganesh">
       <h3>Aadityan</h3>
     </a>
   </div>
