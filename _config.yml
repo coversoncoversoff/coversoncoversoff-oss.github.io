@@ -2,7 +2,8 @@ title: "Pacers With Pretty Feet"
 description:
 theme: minima
 url: "https://pacerswithprettyfeet.github.io"
-baseurl: ""
+baseurl: "/pacerswithprettyfeet-oss.github.io"
+ 
 
 nav_links:
   - title: "Home"
