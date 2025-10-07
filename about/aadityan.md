@@ -3,7 +3,7 @@ layout: page
 title: Aadityan
 permalink: /about/aadityan/
 ---
-![Aadityan](/assets/images/aadityan.jpg)
+![Aadityan]({{ site.baseurl }}/assets/images/aadityan.jpg)
 
 Hi, I’m Aadityan  
 
