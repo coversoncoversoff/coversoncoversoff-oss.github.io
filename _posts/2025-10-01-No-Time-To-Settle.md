@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "No Time To Settle - Starting an innings like Sehwag and Duckett"
+comments: true
 author: "Atharv Tambade and Aadityan Ganesh "
 date: 2025-10-01
 categories: descriptive test cricket
