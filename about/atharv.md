@@ -4,7 +4,7 @@ title: Atharv Tambade
 permalink: /about/atharv/
 ---
 
-![Atharv](/assets/images/Atharv.jpg)
+![Atharv]({{ site.baseurl }}/assets/images/Atharv.jpg)
 
 Hi! I'm Atharv Tambade, a first-year Ph.D. student in Theoretical Physics at the Georgia Institute of Technology (Georgia-Tech).  
 
